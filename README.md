@@ -84,3 +84,28 @@ The following OUs were created:
 - Sales
 
 ![Active Directory Organizational Units](screenshots/02-AD-OU-structure.png)
+
+## Security Groups and User Management
+
+Department-specific security groups were created to simplify permission management.
+
+Users were assigned to their respective departmental security groups rather than receiving permissions individually.
+
+For example, the Finance department uses the `Finance_Group` security group, which contains Finance users such as Michael Chen and Olivia Davis.
+
+![Security Groups](screenshots/03-security-groups.png)
+
+![Finance Group Members](screenshots/04-finance-group-members.png)
+
+## Shared Folders and NTFS Permissions
+
+A shared folder structure was created on DC01 to separate departmental resources:
+
+```text
+C:\Shared
+├── Executive
+├── Finance
+├── HR
+├── IT
+├── Marketing
+└── Sales
