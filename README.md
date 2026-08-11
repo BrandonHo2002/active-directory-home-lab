@@ -52,3 +52,35 @@ mapletech.local
     ├── IT_Group
     ├── Marketing_Group
     └── Sales_Group
+
+## Server and Active Directory Configuration
+
+Windows Server 2022 was configured as the Domain Controller (DC01) for the `mapletech.local` domain.
+
+The server was configured with a static IPv4 address of `192.168.3.10` and provided Active Directory Domain Services (AD DS) and DNS services for the lab environment.
+
+### Domain Controller Configuration
+
+- **Hostname:** `DC01`
+- **Operating System:** Windows Server 2022 Standard Evaluation
+- **Domain:** `mapletech.local`
+- **IPv4 Address:** `192.168.3.10`
+- **Role:** Domain Controller
+- **Services:** Active Directory Domain Services (AD DS) and DNS
+
+![DC01 Server Configuration](screenshots/01-DC01-configuration.png)
+
+### Organizational Units
+
+Departmental Organizational Units were created to logically organize users within Active Directory.
+
+The following OUs were created:
+
+- Executive
+- Finance
+- HR
+- IT
+- Marketing
+- Sales
+
+![Active Directory Organizational Units](screenshots/02-AD-OU-structure.png)
