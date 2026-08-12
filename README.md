@@ -52,6 +52,7 @@ mapletech.local
     ├── IT_Group
     ├── Marketing_Group
     └── Sales_Group
+```
 
 ## Server and Active Directory Configuration
 
@@ -109,3 +110,49 @@ C:\Shared
 ├── IT
 ├── Marketing
 └── Sales
+
+## Windows 11 Client and Domain Authentication
+
+A Windows 11 Pro workstation named `CLIENT01` was configured and joined to the `mapletech.local` Active Directory domain.
+
+The client was configured with:
+
+- **Computer Name:** `CLIENT01`
+- **Domain:** `mapletech.local`
+- **Operating System:** Windows 11 Pro
+- **DNS Server:** `192.168.3.10` (DC01)
+
+![CLIENT01 Domain Join](screenshots/06-CLIENT01-domain-joined.png)
+
+## Permission Testing
+
+The Active Directory configuration and NTFS permissions were tested using the Finance domain user `mchen`.
+
+The tests confirmed that:
+
+- The Finance user could access the Finance shared folder.
+- The Finance user could create a file within the Finance folder.
+- The Finance user was denied access to the Sales folder.
+
+### Successful Access
+
+![Successful Finance Access](screenshots/08-finance-access-success.png)
+
+### Denied Access
+
+![Denied Sales Access](screenshots/09-sales-access-denied.png)
+
+## Results
+
+The lab successfully demonstrated:
+
+- Windows Server 2022 configured as an Active Directory Domain Controller.
+- Active Directory Domain Services and DNS configuration.
+- Organizational Unit and security group management.
+- Department-based user organization.
+- Group-based NTFS permissions.
+- Windows 11 Pro domain joining.
+- Domain user authentication.
+- Successful and restricted access to departmental resources.
+
+This lab provided hands-on experience with common Windows administration and IT support tasks in a controlled virtual environment.
