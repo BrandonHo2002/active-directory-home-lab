@@ -33,7 +33,7 @@ The lab objectives were to:
 
 ## Active Directory Structure
 
-The domain was organized using departmental Organizational Units:
+The domain was organized using Organizational Units (OUs) for each department:
 
 ```text
 mapletech.local
@@ -110,6 +110,7 @@ C:\Shared
 ├── IT
 ├── Marketing
 └── Sales
+```
 
 ## Windows 11 Client and Domain Authentication
 
