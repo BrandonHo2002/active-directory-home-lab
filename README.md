@@ -112,6 +112,12 @@ C:\Shared
 └── Sales
 ```
 
+NTFS permissions were configured so that each department's security group could access its corresponding folder.
+
+For example, `Finance_Group` was granted **Modify** permissions to the Finance folder, while Administrators and SYSTEM retained Full Control.
+
+![Finance NTFS Permissions](screenshots/05-finance-NTFS-permissions.png)
+
 ## Windows 11 Client and Domain Authentication
 
 A Windows 11 Pro workstation named `CLIENT01` was configured and joined to the `mapletech.local` Active Directory domain.
