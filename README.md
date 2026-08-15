@@ -143,11 +143,11 @@ The tests confirmed that:
 
 ### Successful Access
 
-![Successful Finance Access](screenshots/08-finance-access-success.png)
+![Successful Finance Access](screenshots/07-finance-access-success.png)
 
 ### Denied Access
 
-![Denied Sales Access](screenshots/09-sales-access-denied.png)
+![Denied Sales Access](screenshots/08-sales-access-denied.png)
 
 ## Results
 
