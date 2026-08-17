@@ -31,6 +31,7 @@ The lab objectives were to:
 - Authenticate to the domain using an Active Directory user.
 - Test and verify department-based file access.
 
+```markdown
 ## Active Directory Structure
 
 The domain was organized using Organizational Units (OUs) for each department:
