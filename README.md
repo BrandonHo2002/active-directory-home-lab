@@ -93,11 +93,11 @@ Department-specific security groups were created to simplify permission manageme
 
 Users were assigned to their respective departmental security groups rather than receiving permissions individually.
 
-For example, the Finance department uses the `Finance_Group` security group, which contains Finance users such as Michael Chen and Olivia Davis.
+For example, the Finance department has users such as Michael Chen and Olivia Davis organized within the Finance Organizational Unit.
 
 ![Security Groups](screenshots/03-security-groups.png)
 
-![Finance Group Members](screenshots/04-finance-users.png)
+![Finance Users](screenshots/04-finance-users.png)
 
 ## Shared Folders and NTFS Permissions
 
@@ -130,7 +130,9 @@ The client was configured with:
 - **Operating System:** Windows 11 Pro
 - **DNS Server:** `192.168.3.10` (DC01)
 
-![CLIENT01 Domain Join](screenshots/06-domain-user-authentication.png)
+The `whoami` command was used to verify that the user was authenticated through the `mapletech.local` domain.
+
+![Domain User Authentication](screenshots/06-domain-user-authentication.png)
 
 ## Permission Testing
 
