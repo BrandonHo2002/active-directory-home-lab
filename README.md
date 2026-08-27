@@ -97,7 +97,7 @@ For example, the Finance department uses the `Finance_Group` security group, whi
 
 ![Security Groups](screenshots/03-security-groups.png)
 
-![Finance Group Members](screenshots/04-finance-group-members.png)
+![Finance Group Members](screenshots/04-finance-users.png)
 
 ## Shared Folders and NTFS Permissions
 
@@ -130,7 +130,7 @@ The client was configured with:
 - **Operating System:** Windows 11 Pro
 - **DNS Server:** `192.168.3.10` (DC01)
 
-![CLIENT01 Domain Join](screenshots/06-CLIENT01-domain-joined.png)
+![CLIENT01 Domain Join](screenshots/06-domain-user-authentication.png)
 
 ## Permission Testing
 
