@@ -92,7 +92,7 @@ Department-specific security groups were created to simplify permission manageme
 
 Users were assigned to their respective departmental security groups rather than receiving permissions individually.
 
-For example, the Finance department has users such as Michael Chen and Olivia Davis organized within the Finance Organizational Unit.
+For example, Finance users such as Michael Chen and Olivia Davis were organized within the Finance Organizational Unit.
 
 ![Security Groups](screenshots/03-security-groups.png)
 
