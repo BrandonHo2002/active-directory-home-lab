@@ -129,7 +129,7 @@ The client was configured with:
 - **Operating System:** Windows 11 Pro
 - **DNS Server:** `192.168.3.10` (DC01)
 
-The `whoami` command was used to verify that the user was authenticated through the `mapletech.local` domain.
+The whoami command was used to verify that the user was logged in with a mapletech.local domain account.
 
 ![Domain User Authentication](screenshots/06-domain-user-authentication.png)
 
