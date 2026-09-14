@@ -129,7 +129,7 @@ The client was configured with:
 - **Operating System:** Windows 11 Pro
 - **DNS Server:** `192.168.3.10` (DC01)
 
-The whoami command was used to verify that the user was logged in with a mapletech.local domain account.
+The `whoami` command was used to verify that the user was logged in with a `mapletech.local` domain account.
 
 ![Domain User Authentication](screenshots/06-domain-user-authentication.png)
 
@@ -157,7 +157,7 @@ The lab successfully demonstrated:
 
 - Windows Server 2022 configured as an Active Directory Domain Controller.
 - Active Directory Domain Services and DNS configuration.
-- Organizational Unit and security group management.
+- Organizational Unit (OU) and security group management.
 - Department-based user organization.
 - Group-based NTFS permissions.
 - Windows 11 Pro domain joining.
