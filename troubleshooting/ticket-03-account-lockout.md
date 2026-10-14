@@ -1,72 +1,111 @@
-Ticket #3 - Domain Account Lockout
+# Ticket #3 - Domain Account Lockout
 
-Problem
+## Problem
 
-Michael Chen (MAPLETECH\mchen) was unable to sign in to the domain after his 
-account became locked following multiple incorrect password attempts.
+Simulated a Help Desk incident where Michael Chen (MAPLETECH\mchen) could not sign in 
+to the domain after his account became locked following multiple incorrect password attempts.
 
-Symptoms 
+## Symptoms 
 
 - Michael Chen was unable to sign in to CLIENT01.
-- After multiple incorrect password attempts, Windows indicated that the account
+- After three incorrect password attempts, Windows indicated that the account
   was locked.
-- The account could no longer be used to authenticate to the domain.
+- The locked account could not be used to authenticate to the domain until it was unlocked.
 
-Investigation
+## Investigation
 
-1. Configured the domain account-lockout policy in Group Policy Management for lab testing.
-2. Simulated a user account lockout on CLIENT01 by entering an incorrect password three times.
-3. Confirmed that Windows reported the account as locked.
-4. Opened Active Directory Users and Computers (ADUC) on DC01.
-5. Located Michael Chen's account and verified its locked status.
-6. Reviewed the Default Domain Policy and confirmed the account-lockout threshold was set to three invalid logon attempts.
+### 1. Reviewed the domain account-lockout policy
 
-Tools / Commands used 
+Opened Group Policy Management on DC01 and reviewed the account-lockout settings in the 
+Default Domain Policy.
 
-- Active Directory users and Computers (ADUC)
-    - Checked the user's account status
-    - Unlocked the user's account
+Confirmed that the account-lockout threshold was configured for three invalid logon attempts.
+
+### 2. Tested the account-lockout policy
+
+Used CLIENT01 to simulate an account lockout by entering an incorrect password three times 
+for Michael Chen's domain account.
+
+Windows reported that the account was locked.
+
+### 3. Checked the user's account status
+
+Opened Active Directory Users and Computers (ADUC) on DC01.
+
+Located Michael Chen's account and verified that it was locked.
+
+### 4. Unlocked the account
+
+Unlocked Michael Chen's account through Active Directory Users and Computers.
+
+### 5. Tested domain authentication
+
+Returned to CLIENT01 and signed in using Michael Chen's correct domain credentials.
+
+Opened PowerShell and ran:
+
+whoami
+
+The command returned:
+
+mapletech\mchen
+
+This confirmed that the user had successfully signed in with the domain account.
+
+## Root Cause
+
+Michael Chen's account was locked after three invalid password attempts triggered 
+the domain's account-lockout policy.
+
+The Default Domain Policy was configured to lock an account after three invalid 
+logon attempts.
+
+## Resolution
+
+Unlocked Michael Chen's account through Active Directory Users and Computers on DC01.
+
+Michael was then able to sign in to CLIENT01 using his correct domain credentials.
+
+## Verification
+
+- Confirmed that Michael Chen's account was unlocked in Active Directory Users and Computers.
+- Successfully signed in to CLIENT01 using Michael's domain credentials.
+- Ran whoami in PowerShell and confirmed that the logged-in account was mapletech\mchen.
+
+These checks confirmed that access to the domain account had been restored.
+
+## Tools used 
+
 - Group Policy Management
-    - Reviewed the domain account-lockout policy
+  - Reviewed the domain account-lockout policy.
+- Active Directory Users and Computers (ADUC)
+  - Checked the user's account status.
+  - Unlocked the account.
 - Windows PowerShell
-    - Used whoami to verify the authentication domain account
-- CLIENT01
-    - Used to reproduce and verify the login problem
+  - Used whoami to verify the logged-in domain account.
+- CLIENT01 (Windows 11 Pro)
+  - Reproduced the account-lockout condition and verified successful sign-in.
 
-Root Cause 
+Screenshots
 
-The account was locked because three consecutive invalid password attempts 
-triggered the domain's account-lockout policy.
+- ticket-03-01-account-locked.png — Shows the account-lockout message on CLIENT01.
+- ticket-03-02-account-locked-aduc.png — Shows Michael Chen's locked account in Active
+  Directory Users and Computers.
+- ticket-03-03-account-lockout-policy.png — Shows the configured account-lockout policy.
+- ticket-03-04-account-unlocked.png — Shows the account after it was unlocked.
+- ticket-03-05-account-access-restored.png — Shows successful domain sign-in and the
+  whoami result.
 
-The configured policy locks an account after 3 invalid logon attempts.
-
-Resolution
-
-The Michael Chen account was unlocked through Active Directory Users and
-Computers.
-
-After the account was unlocked, Michael was able to sign in to CLIENT01 
-using his correct domain credentials.
-
-Verification
-
-Michael successfully logged into CLIENT01 after the account was unlocked.
-
-The whoami command was used in PowerShell to confirm that the logged-in 
-account was:
-
-MAPLETECH\mchen
-
-This confirmed that domain authentication was working again.
-
-Skills Demonstrated 
+## Skills Demonstrated 
 
 - Active Directory account management
 - Troubleshooting domain account lockouts
-- Active Directory Users and Computers
 - Group Policy Management
-- Account-lockout policies
+- Account-lockout policy configuration and verification
 - Domain authentication troubleshooting
+- Windows PowerShell command-line verification
+- User account recovery
+- Incident investigation and documentation
 - Windows PowerShell
 - User account recovery
 - Incident investigation and verification
