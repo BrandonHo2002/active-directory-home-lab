@@ -94,10 +94,10 @@ ipconfig /flushdns
 
 ## Screenshots
 
-ticket-01-01-working-dns-configuration.png — Original working network configuration.
-ticket-01-02-dns-failure.png — Failed domain name resolution.
-ticket-01-03-dns-investigation.png — DNS configuration and direct DNS query results.
-ticket-01-04-dns-restored.png — Successful DNS resolution after the correction.
+- ticket-01-01-working-dns-configuration.png — Original working network configuration.
+- ticket-01-02-dns-failure.png — Failed domain name resolution.
+- ticket-01-03-dns-investigation.png — DNS configuration and direct DNS query results.
+- ticket-01-04-dns-restored.png — Successful DNS resolution after the correction.
 
 ## Skills Demonstrated 
 
