@@ -106,5 +106,5 @@ ipconfig /flushdns
 - IP connectivity testing
 - Network configuration verification
 - PowerShell command-line troubleshooting
-- Root-cause identifcation
+- Root cause identification
 - Troubleshooting verification and documentation
