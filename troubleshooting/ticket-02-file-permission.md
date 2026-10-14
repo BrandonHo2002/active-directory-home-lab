@@ -1,4 +1,4 @@
-# Ticket #2 Finance Folder Access Issue
+# Ticket #2 - Finance Folder Access Issue
 
 ## Problem
 
