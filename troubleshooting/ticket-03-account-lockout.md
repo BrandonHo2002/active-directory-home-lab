@@ -86,7 +86,7 @@ These checks confirmed that access to the domain account had been restored.
 - CLIENT01 (Windows 11 Pro)
   - Reproduced the account-lockout condition and verified successful sign-in.
 
-Screenshots
+## Screenshots
 
 - ticket-03-01-account-locked.png — Shows the account-lockout message on CLIENT01.
 - ticket-03-02-account-locked-aduc.png — Shows Michael Chen's locked account in Active
