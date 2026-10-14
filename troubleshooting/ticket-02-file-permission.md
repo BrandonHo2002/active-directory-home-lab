@@ -75,7 +75,9 @@ These checks confirmed that access had been restored through the security group.
 
 ## Screenshots
 
-
+- ticket-02-01-finance-group-member — Shows Michael Chen's Finance group membership during the investigation.
+- ticket-02-02-finance-permissions — Shows the NTFS permissions configured for the Finance folder.
+- ticket-02-03-access-restored — Shows that access to the Finance folder was restored.
 
 ## Tools Used
 
