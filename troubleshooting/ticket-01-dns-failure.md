@@ -13,9 +13,10 @@ could not resolve the mapletech.local domain name.
 
 ## Investigation
 
-### 1. Checked the original network configuration
+### 1. Reviewed the initial network configuration
 
-Reviewed the client's network configuration before simulating the issue.
+Recorded CLIENT01's working network configuration before 
+introducing the simulated DNS issue.
 
 - IPv4 address: 192.168.3.129
 - Default gateway: 192.168.3.2
@@ -44,7 +45,7 @@ nslookup mapletech.local
 
 The DNS request timed out. 
 
-### 4. Checked the DNS confirguration
+### 4. Inspected the client's DNS configuration
 
 Ran: 
 
@@ -96,8 +97,8 @@ ipconfig /flushdns
 
 - ticket-01-01-working-dns-configuration.png — Original working network configuration.
 - ticket-01-02-dns-failure.png — Failed domain name resolution.
-- ticket-01-03-dns-investigation.png — DNS configuration and direct DNS query results.
-- ticket-01-04-dns-restored.png — Successful DNS resolution after the correction.
+- ticket-01-03-dns-investigation.png — Direct DNS query to the domain controller.
+- ticket-01-04-dns-resolved.png — Successful DNS resolution after the correction.
 
 ## Skills Demonstrated 
 
