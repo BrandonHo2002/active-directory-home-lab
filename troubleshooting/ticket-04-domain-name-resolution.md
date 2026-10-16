@@ -3,8 +3,8 @@
 ## Problem 
 
 CLIENT01 was unable to resolve the domain name mapletech.local after its DNS
-server configuration was temporaily changed during a simulated Help Desk 
-troubleshooting excercise.
+server configuration was temporarily changed during a simulated Help Desk 
+troubleshooting exercise.
 
 ## Symptoms
 
@@ -59,31 +59,35 @@ Ran:
 
 nslookup mapletech.local
 
-The DNS query failed because CLIENT01 was using its own IP address as the DNS server 
-instead of the domain controller's DNS service.
+The DNS query failed because CLIENT01 was using its own IP address as the DNS
+server instead of the domain controller's DNS service.
 
 ### 6. Restored the correct DNS configuration
 
-Changed the DNS server for Ethernet0 back to 192.168.3.10, the IP address of DC01.
+Changed the DNS server for Ethernet0 back to 192.168.3.10, the IP address 
+of DC01.
 
 ## Root Cause
 
-The simulated DNS failure occurred because CLIENT01 was configured to use 
-its own IP address (192.168.3.129) as its DNS server instead of the domain 
-controller's DNS service at 192.168.3.10.
+CLIENT01 was configured to use its own IP address (192.168.3.129) as its DNS
+server instead of DC01 (192.168.3.10), which provides DNS resolution for the
+lab's domain.
 
 ## Resolution
 
-Restored the DNS server configuration on CLIENT01's Ethernet0 adapter to 192.168.3.10.
+Restored the DNS server configuration on CLIENT01's Ethernet0 adapter to
+192.168.3.10.
 
 ## Verification
 
 Confirmed that CLIENT01's DNS server configuration was restored to 192.168.3.10.
 
-- Re-ran nslookup mapletech.local to test DNS name resolution.
-- Re-ran ping DC01 to test connectivity to the domain controller by hostname.
-- These checks were intended to confirm that DNS configuration and name resolution
-  were working correctly after the change was reversed.
+- Re-ran nslookup mapletech.local and confirmed that the domain name
+  resolved successfully.
+- Re-ran ping DC01 and confirmed that the domain controller could be reached
+  by hostname.
+
+These checks confirmed that DNS name resolution was working correctly after the original configuration was restored.
 
 ## Tools Used
 
@@ -104,7 +108,8 @@ Confirmed that CLIENT01's DNS server configuration was restored to 192.168.3.10.
 
 ## Screenshots
 
-- ticket-04-01-baseline-dns.png — Shows the original DNS configuration before the test.
+- ticket-04-01-baseline-dns.png — Shows the original DNS configuration before
+  the test.
 - ticket-04-02-dns-failure.png — Shows the failed DNS lookup with the
   incorrect DNS configuration.
 - ticket-04-03-dns-restored.png — Shows the restored DNS configuration.
