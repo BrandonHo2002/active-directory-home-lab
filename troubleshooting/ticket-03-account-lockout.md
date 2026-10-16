@@ -21,12 +21,11 @@ Default Domain Policy.
 
 Confirmed that the account-lockout threshold was configured for three invalid logon attempts.
 
-### 2. Tested the account-lockout policy
+### 2. Reproduced the account-lockout condition
 
-Used CLIENT01 to simulate an account lockout by entering an incorrect password three times 
-for Michael Chen's domain account.
+Used CLIENT01 to reproduce the account-lockout condition by entering an incorrect password three times for Michael Chen's domain account.
 
-Windows reported that the account was locked.
+Windows reported that the account was locked, consistent with the configured account-lockout threshold.
 
 ### 3. Checked the user's account status
 
@@ -54,11 +53,7 @@ This confirmed that the user had successfully signed in with the domain account.
 
 ## Root Cause
 
-Michael Chen's account was locked after three invalid password attempts triggered 
-the domain's account-lockout policy.
-
-The Default Domain Policy was configured to lock an account after three invalid 
-logon attempts.
+Michael Chen's domain account was locked after three consecutive invalid logon attempts triggered the account-lockout threshold configured in the Default Domain Policy.
 
 ## Resolution
 
@@ -101,11 +96,8 @@ These checks confirmed that access to the domain account had been restored.
 - Active Directory account management
 - Troubleshooting domain account lockouts
 - Group Policy Management
-- Account-lockout policy configuration and verification
+- Account-lockout policy verification
 - Domain authentication troubleshooting
 - Windows PowerShell command-line verification
 - User account recovery
 - Incident investigation and documentation
-- Windows PowerShell
-- User account recovery
-- Incident investigation and verification
