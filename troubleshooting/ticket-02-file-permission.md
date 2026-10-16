@@ -21,7 +21,7 @@ Opened Active Directory Users and Computers (ADUC) and located Michael Chen's us
 
 Reviewed his account details and confirmed that he was associated with the Finance department.
 
-### 2. Checked Michael Chen's Active Directory account
+### 2. Checked Michael Chen's security group memberships
 
 Reviewed the Member Of tab in Michael's account properties.
 
