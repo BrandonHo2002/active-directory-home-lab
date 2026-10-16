@@ -17,11 +17,11 @@ Finance_Group security group.
 
 ### 1. Checked Michael Chen's Active Directory account
 
-Opened Active directory Users and Computers (ADUC) and located Michael Chen's user account.
+Opened Active Directory Users and Computers (ADUC) and located Michael Chen's user account.
 
-Verified that his account was associated with the Finance department.
+Reviewed his account details and confirmed that he was associated with the Finance department.
 
-### 2. Checked the user's security group memberships
+### 2. Checked Michael Chen's Active Directory account
 
 Reviewed the Member Of tab in Michael's account properties.
 
@@ -60,7 +60,7 @@ Michael Chen was not a member of Finance_Group, which had Modify permissions on 
 
 Added Michael Chen back to Finance_Group in Active Directory.
 
-Refreshed the user's domain session so the updated group membership could take effect.
+Signed out of Michael's domain session on CLIENT01 and signed back in to refresh the user's security group membership.
 
 ## Verification
 
@@ -75,9 +75,9 @@ These checks confirmed that access had been restored through the security group.
 
 ## Screenshots
 
-- ticket-02-01-finance-group-member — Shows Michael Chen's Finance group membership during the investigation.
-- ticket-02-02-finance-permissions — Shows the NTFS permissions configured for the Finance folder.
-- ticket-02-03-access-restored — Shows that access to the Finance folder was restored.
+- ticket-02-01-finance-group-member.png — Shows Michael Chen's Finance group membership during the investigation.
+- ticket-02-02-finance-permissions.png — Shows the NTFS permissions configured for the Finance folder.
+- ticket-02-03-access-restored.png — Shows that access to the Finance folder was restored.
 
 ## Tools Used
 
