@@ -12,14 +12,16 @@ Simulated a Help Desk incident in a domain-joined Windows 11 environment where t
 
 ## Investigation
 
-### 1. Reviewed the initial network configuration
+### 1. Recorded the initial working network configuration
 
-Recorded CLIENT01's working network configuration before 
-introducing the simulated DNS issue.
+Recorded CLIENT01's network configuration before introducing the 
+simulated DNS issue.
 
 - IPv4 address: 192.168.3.129
 - Default gateway: 192.168.3.2
 - DNS server: 192.168.3.10
+
+The initial configuration was working correctly. An incorrect DNS server was introduced afterward to simulate a Help Desk incident.
 
 ### 2. Tested connectivity to the domain controller
 
@@ -38,11 +40,11 @@ ping mapletech.local
 
 The hostname could not be resolved.
 
-Then Ran:
+Then ran:
 
 nslookup mapletech.local
 
-The DNS request timed out. 
+The DNS request timed out when using the client's configured DNS server.
 
 ### 4. Inspected the client's DNS configuration
 
@@ -50,8 +52,8 @@ Ran:
 
 ipconfig /all 
 
-The client was configured to use DNS server 192.168.3.254 instead of the domain 
-controller's DNS server at 192.168.3.10.
+The output showed that CLIENT01 was configured to use DNS server 192.168.3.254 
+instead of the domain controller's DNS server at 192.168.3.10.
 
 ### 5. Tested the domain controller's DNS directly
 
@@ -64,13 +66,14 @@ resolve the domain name when queried directly.
 
 ## Root Cause
 
-CLIENT01 was configurated to use the incorrect DNS server (192.168.3.254) instead 
-of the domain controller's DNS server (192.168.3.10).
+CLIENT01 was configured to use the incorrect DNS server (192.168.3.254) instead
+of the domain controller's DNS server (192.168.3.10). As a result, the client
+could not successfully resolve the domain name using its configured DNS server.
 
 ## Resolution
 
-Changed CLIENT01's DNS server configuration to 192.168.3.10, the IP address
-of DC01.
+Corrected CLIENT01's DNS server configuration to use 192.168.3.10, the IP 
+address of DC01, instead of the incorrect DNS server at 192.168.3.254.
 
 Flushed the local DNS cache using:
 
@@ -79,10 +82,11 @@ ipconfig /flushdns
 ## Verification
 
 - Confirmed that nslookup mapletech.local successfully resolved the domain
-  name after correcting the DNS configuraiton.
-- Verified that CLIENT01 was using the domain controller's DNS server at 192.168.3.10.
+  name after correcting the DNS configuration.
+- Verified that CLIENT01 was using the domain controller's DNS server at
+  192.168.3.10.
 
-## Tools used 
+## Tools Used 
 
 - Windows 11 (CLIENT01)
 - Windows PowerShell
@@ -94,10 +98,13 @@ ipconfig /flushdns
 
 ## Screenshots
 
-- ticket-01-01-working-dns-configuration.png — Original working network configuration.
-- ticket-01-02-dns-failure.png — Failed domain name resolution.
+- ticket-01-01-working-dns-configuration.png — Original working network
+  configuration before the simulated issue.
+- ticket-01-02-dns-failure.png — Failed domain name resolution using the
+  incorrect DNS configuration.
 - ticket-01-03-dns-investigation.png — Direct DNS query to the domain controller.
-- ticket-01-04-dns-resolved.png — Successful DNS resolution after the correction.
+- ticket-01-04-dns-resolved.png — Successful DNS resolution after correcting
+  the DNS configuration.
 
 ## Skills Demonstrated 
 
