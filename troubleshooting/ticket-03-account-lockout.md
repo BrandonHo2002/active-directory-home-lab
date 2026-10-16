@@ -2,30 +2,35 @@
 
 ## Problem
 
-Simulated a Help Desk incident where Michael Chen (MAPLETECH\mchen) could not sign in 
-to the domain after his account became locked following multiple incorrect password attempts.
+Simulated a Help Desk incident where Michael Chen (MAPLETECH\mchen) could not 
+sign in to the domain after his account became locked following multiple 
+incorrect password attempts.
 
 ## Symptoms 
 
 - Michael Chen was unable to sign in to CLIENT01.
 - After three incorrect password attempts, Windows indicated that the account
   was locked.
-- The locked account could not be used to authenticate to the domain until it was unlocked.
+- The locked account could not be used to authenticate to the domain until it
+  was unlocked.
 
 ## Investigation
 
 ### 1. Reviewed the domain account-lockout policy
 
-Opened Group Policy Management on DC01 and reviewed the account-lockout settings in the 
-Default Domain Policy.
+Opened Group Policy Management on DC01 and reviewed the account-lockout settings
+in the Default Domain Policy.
 
-Confirmed that the account-lockout threshold was configured for three invalid logon attempts.
+Confirmed that the account-lockout threshold was configured for three invalid
+logon attempts.
 
 ### 2. Reproduced the account-lockout condition
 
-Used CLIENT01 to reproduce the account-lockout condition by entering an incorrect password three times for Michael Chen's domain account.
+Used CLIENT01 to reproduce the account-lockout condition by entering an 
+incorrect password three times for Michael Chen's domain account.
 
-Windows reported that the account was locked, consistent with the configured account-lockout threshold.
+Windows reported that the account was locked, consistent with the configured 
+account-lockout threshold.
 
 ### 3. Checked the user's account status
 
@@ -39,7 +44,8 @@ Unlocked Michael Chen's account through Active Directory Users and Computers.
 
 ### 5. Tested domain authentication
 
-Returned to CLIENT01 and signed in using Michael Chen's correct domain credentials.
+Returned to CLIENT01 and signed in using Michael Chen's correct domain
+credentials.
 
 Opened PowerShell and ran:
 
@@ -53,19 +59,25 @@ This confirmed that the user had successfully signed in with the domain account.
 
 ## Root Cause
 
-Michael Chen's domain account was locked after three consecutive invalid logon attempts triggered the account-lockout threshold configured in the Default Domain Policy.
+Michael Chen's domain account was locked after three consecutive invalid logon 
+attempts triggered the account-lockout threshold configured in the Default 
+Domain Policy.
 
 ## Resolution
 
-Unlocked Michael Chen's account through Active Directory Users and Computers on DC01.
+Unlocked Michael Chen's account through Active Directory Users and Computers 
+on DC01.
 
-Michael was then able to sign in to CLIENT01 using his correct domain credentials.
+Michael was then able to sign in to CLIENT01 using his correct domain 
+credentials.
 
 ## Verification
 
-- Confirmed that Michael Chen's account was unlocked in Active Directory Users and Computers.
+- Confirmed that Michael Chen's account was unlocked in Active Directory Users
+  and Computers.
 - Successfully signed in to CLIENT01 using Michael's domain credentials.
-- Ran whoami in PowerShell and confirmed that the logged-in account was mapletech\mchen.
+- Ran whoami in PowerShell and confirmed that the logged-in account was
+  mapletech\mchen.
 
 These checks confirmed that access to the domain account had been restored.
 
@@ -83,13 +95,15 @@ These checks confirmed that access to the domain account had been restored.
 
 ## Screenshots
 
-- ticket-03-01-account-locked.png — Shows the account-lockout message on CLIENT01.
-- ticket-03-02-account-locked-aduc.png — Shows Michael Chen's locked account in Active
-  Directory Users and Computers.
-- ticket-03-03-account-lockout-policy.png — Shows the configured account-lockout policy.
+- ticket-03-01-account-locked.png — Shows the account-lockout message on
+  CLIENT01.
+- ticket-03-02-account-locked-aduc.png — Shows Michael Chen's locked account in
+  Active Directory Users and Computers.
+- ticket-03-03-account-lockout-policy.png — Shows the configured account-lockout
+  policy.
 - ticket-03-04-account-unlocked.png — Shows the account after it was unlocked.
-- ticket-03-05-account-access-restored.png — Shows successful domain sign-in and the
-  whoami result.
+- ticket-03-05-account-access-restored.png — Shows successful domain sign-in and
+  the whoami result.
 
 ## Skills Demonstrated 
 
