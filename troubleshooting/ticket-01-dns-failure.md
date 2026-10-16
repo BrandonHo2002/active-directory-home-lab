@@ -2,14 +2,13 @@
 
 ## Problem
 
-Simulated a Help Desk incident where a domain-joined Windows 11 client 
-could not resolve the mapletech.local domain name.
+Simulated a Help Desk incident in a domain-joined Windows 11 environment where the client could not resolve the mapletech.local domain name. The scenario was used to practice DNS troubleshooting and identify an incorrect client DNS configuration.
 
 ## Symptoms 
 
 - The client could communicate with the domain controller using its IP address.
-- The client could not resolve mapletech.local by hostname.
-- nslookup mapletech.local timed out.
+- The client could not resolve mapletech.local by name.
+- DNS lookup attempts using the client's configured DNS server timed out.
 
 ## Investigation
 
