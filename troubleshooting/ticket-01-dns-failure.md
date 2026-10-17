@@ -98,7 +98,7 @@ ipconfig /flushdns
 
 ## Screenshots
 
-- ticket-01-01-working-dns-configuration.png — Original working network
+- ticket-01-01-working-dns-config.png — Original working network
   configuration before the simulated issue.
 - ticket-01-02-dns-failure.png — Failed domain name resolution using the
   incorrect DNS configuration.
