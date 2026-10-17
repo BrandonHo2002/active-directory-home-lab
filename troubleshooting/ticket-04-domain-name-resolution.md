@@ -87,7 +87,8 @@ Confirmed that CLIENT01's DNS server configuration was restored to 192.168.3.10.
 - Re-ran ping DC01 and confirmed that the domain controller could be reached
   by hostname.
 
-These checks confirmed that DNS name resolution was working correctly after the original configuration was restored.
+These checks confirmed that DNS name resolution was working correctly after the
+original configuration was restored.
 
 ## Tools Used
 
@@ -108,8 +109,8 @@ These checks confirmed that DNS name resolution was working correctly after the 
 
 ## Screenshots
 
-- ticket-04-01-baseline-dns.png — Shows the original DNS configuration before
-  the test.
+- ticket-04-01-baseline-dns.png — Shows successful DNS name resolution and
+  connectivity to DC01 before introducing the simulated DNS issue.
 - ticket-04-02-dns-failure.png — Shows the failed DNS lookup with the
   incorrect DNS configuration.
 - ticket-04-03-dns-restored.png — Shows the restored DNS configuration.
