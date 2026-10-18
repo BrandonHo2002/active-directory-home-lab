@@ -26,9 +26,10 @@ Finance department.
 
 ### 2. Checked Michael Chen's security group memberships
 
-Reviewed the Member Of tab in Michael's account properties.
+Reviewed the Members tab of the Finance_Group security group in Active Directory
+Users and Computers (ADUC).
 
-Confirmed that Finance_Group was not listed among his group memberships.
+Confirmed that Michael Chen was not listed as a member of Finance_Group.
 
 ### 3. Reviewed the Finance folder's permissions
 
@@ -38,11 +39,9 @@ Confirmed that Finance_Group had Modify permissions on the folder.
 
 ### 4. Identified the missing group membership
 
-The folder already had permissions assigned to Finance_Group, but Michael was
-not a member of that group.
-
-This explained why he was not receiving the intended access through the security
-group.
+The Finance folder already had permissions assigned to Finance_Group, but
+Michael Chen was not a member of that group. This explained why he was not
+receiving the intended access through the security group.
 
 ### 5. Updated the user's group membership
 
@@ -53,7 +52,7 @@ Added Michael Chen back to Finance_Group in Active Directory.
 Signed in to CLIENT01 using Michael's domain account and checked his group
 memberships using:
 
-whoami /groups
+  whoami /groups
 
 Confirmed that MAPLETECH\Finance_Group appeared in the group membership
 information.
@@ -85,12 +84,12 @@ These checks confirmed that access had been restored through the security group.
 
 ## Screenshots
 
-- ticket-02-01-finance-group-member.png — Shows Michael Chen's current
-  Finance_Group membership after it was restored.
+- ticket-02-01-finance-group-missing-member.png — Shows the Members tab of
+  Finance_Group, where Michael Chen is absent from the group.
 - ticket-02-02-finance-permissions.png — Shows the NTFS permissions configured
   for the Finance folder, including Modify access for Finance_Group.
-- ticket-02-03-access-restored.png — Shows Michael Chen listed as a member of
-  Finance_Group in Active Directory.
+- ticket-02-03-group-membership-restored.png — Shows Michael Chen listed as a
+  member of Finance_Group in Active Directory.
 - ticket-02-04-finance-access-restored.png — Shows the Finance folder containing
   the Finance Test file created during access verification.
 
