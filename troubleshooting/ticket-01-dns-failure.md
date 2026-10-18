@@ -2,7 +2,10 @@
 
 ## Problem
 
-Simulated a Help Desk incident in a domain-joined Windows 11 environment where the client could not resolve the mapletech.local domain name. The scenario was used to practice DNS troubleshooting and identify an incorrect client DNS configuration.
+Simulated a Help Desk incident in a domain-joined Windows 11 environment where
+the client could not resolve the mapletech.local domain name. The scenario was
+used to practice DNS troubleshooting and identify an incorrect client DNS
+configuration.
 
 ## Symptoms 
 
@@ -21,13 +24,14 @@ simulated DNS issue.
 - Default gateway: 192.168.3.2
 - DNS server: 192.168.3.10
 
-The initial configuration was working correctly. An incorrect DNS server was introduced afterward to simulate a Help Desk incident.
+The initial configuration was working correctly. An incorrect DNS server was
+introduced afterward to simulate a Help Desk incident.
 
 ### 2. Tested connectivity to the domain controller
 
 Ran:
 
-ping 192.168.3.10
+  ping 192.168.3.10
 
 The ping was successful, confirming that the client could communicate with the
 domain controller over the network.
@@ -36,13 +40,13 @@ domain controller over the network.
 
 Ran:
 
-ping mapletech.local
+  ping mapletech.local
 
 The hostname could not be resolved.
 
 Then ran:
 
-nslookup mapletech.local
+  nslookup mapletech.local
 
 The DNS request timed out when using the client's configured DNS server.
 
@@ -50,7 +54,7 @@ The DNS request timed out when using the client's configured DNS server.
 
 Ran: 
 
-ipconfig /all 
+  ipconfig /all 
 
 The output showed that CLIENT01 was configured to use DNS server 192.168.3.254 
 instead of the domain controller's DNS server at 192.168.3.10.
@@ -59,7 +63,7 @@ instead of the domain controller's DNS server at 192.168.3.10.
 
 Ran:
 
-nslookup mapletech.local 192.168.3.10
+  nslookup mapletech.local 192.168.3.10
 
 The lookup succeeded, confirming that the domain controller's DNS service could 
 resolve the domain name when queried directly.
@@ -77,7 +81,7 @@ address of DC01, instead of the incorrect DNS server at 192.168.3.254.
 
 Flushed the local DNS cache using:
 
-ipconfig /flushdns
+  ipconfig /flushdns
 
 ## Verification
 
