@@ -49,7 +49,7 @@ credentials.
 
 Opened PowerShell and ran:
 
-whoami
+  whoami
 
 The command returned:
 
