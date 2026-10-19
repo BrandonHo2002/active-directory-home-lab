@@ -2,20 +2,27 @@
 
 A hands-on Active Directory lab built using Windows Server 2022 and Windows 11 Pro in VMware Workstation Pro.
 
-This project demonstrates the deployment and administration of a small Windows Active Directory environment, including user and group management, Organizational Units, DNS, domain joining, shared folders, and NTFS permissions.
+This project demonstrates the deployment and administration of a small Windows Active Directory environment, including user and group management, Organizational Units, DNS, domain joining, shared folders, NTFS permissions, and simulated Help Desk troubleshooting scenarios.
 
 ## Lab Environment
 
-- **Hypervisor:** VMware Workstation Pro
-- **Domain Controller:** Windows Server 2022
-- **Client:** Windows 11 Pro
-- **Domain:** `mapletech.local`
-- **Domain Controller:** `DC01`
-- **Client Computer:** `CLIENT01`
+- Hypervisor: VMware Workstation Pro
+- Domain Controller: Windows Server 2022 (DC01)
+- Client: Windows 11 Pro (CLIENT01)
+- Domain: mapletech.local
+- Domain Controller IP: 192.168.3.10
+- Client IPv4 Address: 192.168.3.129
+
+## Repository Structure
+
+The repository contains the Active Directory lab configuration, setup screenshots, and simulated Help Desk troubleshooting documentation.
+
+- `screenshots/` — Screenshots showing the initial lab configuration, Active Directory structure, domain authentication, and folder permission tests.
+- `Troubleshoot/` — Contains four simulated Help Desk ticket documents and a separate folder containing screenshots associated with the troubleshooting tickets.
 
 ## Project Objectives
 
-The goal of this lab was to build a small Windows-based Active Directory environment and practice common IT administration tasks.
+The goal of this lab was to build a small Windows-based Active Directory environment and practice common IT administration tasks and Help Desk tasks.
 
 The lab objectives were to:
 
@@ -30,6 +37,9 @@ The lab objectives were to:
 - Join a Windows 11 Pro workstation to the domain.
 - Authenticate to the domain using an Active Directory user.
 - Test and verify department-based file access.
+- Troubleshoot simulated DNS resolution and client DNS configuration issues.
+- Investigate and resolve domain user access and account lockout issues.
+- Document Help Desk incidents, including investigation, resolution, verification, and screenshots.
 
 ## Active Directory Structure
 
@@ -127,6 +137,7 @@ The client was configured with:
 - **Computer Name:** `CLIENT01`
 - **Domain:** `mapletech.local`
 - **Operating System:** Windows 11 Pro
+- **IPv4 Address:** `192.168.3.129`
 - **DNS Server:** `192.168.3.10` (DC01)
 
 The `whoami` command was used to verify that the user was logged in with a `mapletech.local` domain account.
@@ -151,6 +162,34 @@ The tests confirmed that:
 
 ![Denied Sales Access](screenshots/08-sales-access-denied.png)
 
+## Help Desk Troubleshooting Tickets
+
+This section documents simulated Help Desk incidents completed in the Active Directory lab. Each ticket describes the reported problem, investigation steps, root cause, resolution, and verification.
+
+### Ticket #1 — DNS Resolution Failure
+
+Practiced troubleshooting a domain name resolution issue by comparing IP connectivity with DNS name resolution and investigating the client DNS configuration.
+
+**Ticket documentation:** []
+
+### Ticket #2 — Finance Folder Access Issue
+
+Investigated a shared-folder access problem by checking the user's department, security group membership, and NTFS permissions. Restored the required group membership and verified access.
+
+**Ticket documentation:** []
+
+### Ticket #3 — Domain Account Lockout
+
+Configured and tested a domain account lockout policy, verified the lockout behaviour after repeated incorrect password attempts, and checked account recovery.
+
+**Ticket documentation:** []
+
+### Ticket #4 — DNS Name Resolution Issue
+
+Simulated an incorrect DNS server configuration on the Windows 11 client, tested the resulting lookup failure, restored the correct DNS server, and verified successful name resolution.
+
+**Ticket documentation:** []
+
 ## Results
 
 The lab successfully demonstrated:
@@ -163,5 +202,8 @@ The lab successfully demonstrated:
 - Windows 11 Pro domain joining.
 - Domain user authentication.
 - Successful and restricted access to departmental resources.
+- DNS resolution troubleshooting and verification of corrected client DNS settings.
+- Investigation of security group membership and domain account lockout behaviour.
+- Documentation of simulated Help Desk incidents with troubleshooting evidence.
 
 This lab provided hands-on experience with common Windows administration and IT support tasks in a controlled virtual environment.
