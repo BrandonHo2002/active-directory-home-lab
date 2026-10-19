@@ -20,7 +20,7 @@ troubleshooting exercise.
 
 Ran:
 
-Get-NetIPConfiguration
+  Get-NetIPConfiguration
 
 Confirmed that CLIENT01 had the following configuration before the test:
 
@@ -32,7 +32,7 @@ Confirmed that CLIENT01 had the following configuration before the test:
 
 Ran:
 
-Get-NetAdapter
+  Get-NetAdapter
 
 Identified Ethernet0 as the active network adapter used for the lab's 
 network connection.
@@ -41,7 +41,7 @@ network connection.
 
 Ran:
 
-Get-DnsClientServerAddress -AddressFamily IPv4
+  Get-DnsClientServerAddress -AddressFamily IPv4
 
 Verified the DNS server configuration for CLIENT01's network adapter 
 before making the change.
@@ -51,13 +51,13 @@ before making the change.
 Temporarily changed the DNS server for Ethernet0 to 192.168.3.129, CLIENT01's 
 own IP address, using:
 
-Set-DnsClientServerAddress -InterfaceAlias "Ethernet0" -ServerAddresses 192.168.3.129
+  Set-DnsClientServerAddress -InterfaceAlias "Ethernet0" -ServerAddresses 192.168.3.129
 
 ### 5. Tested DNS name resolution
 
 Ran:
 
-nslookup mapletech.local
+  nslookup mapletech.local
 
 The DNS query failed because CLIENT01 was using its own IP address as the DNS
 server instead of the domain controller's DNS service.
@@ -113,7 +113,8 @@ original configuration was restored.
   connectivity to DC01 before introducing the simulated DNS issue.
 - ticket-04-02-dns-failure.png — Shows the failed DNS lookup with the
   incorrect DNS configuration.
-- ticket-04-03-dns-restored.png — Shows the restored DNS configuration.
+- ticket-04-03-dns-restored.png — Shows the restored DNS server configuration,
+  successful domain name resolution, and connectivity to DC01.
 
 ## Skills Demonstrated
 
