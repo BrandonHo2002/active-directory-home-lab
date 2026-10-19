@@ -170,25 +170,25 @@ This section documents simulated Help Desk incidents completed in the Active Dir
 
 Practiced troubleshooting a domain name resolution issue by comparing IP connectivity with DNS name resolution and investigating the client DNS configuration.
 
-**Ticket documentation:** []
+**Ticket documentation:** [View Ticket #1](troubleshooting/ticket-01-dns-failure.md)
 
 ### Ticket #2 — Finance Folder Access Issue
 
 Investigated a shared-folder access problem by checking the user's department, security group membership, and NTFS permissions. Restored the required group membership and verified access.
 
-**Ticket documentation:** []
+**Ticket documentation:** [View Ticket #2](troubleshooting/ticket-02-file-permission.md)
 
 ### Ticket #3 — Domain Account Lockout
 
 Configured and tested a domain account lockout policy, verified the lockout behaviour after repeated incorrect password attempts, and checked account recovery.
 
-**Ticket documentation:** []
+**Ticket documentation:** [View Ticket #3](troubleshooting/ticket-03-account-lockout.md)
 
 ### Ticket #4 — DNS Name Resolution Issue
 
 Simulated an incorrect DNS server configuration on the Windows 11 client, tested the resulting lookup failure, restored the correct DNS server, and verified successful name resolution.
 
-**Ticket documentation:** []
+**Ticket documentation:** [View Ticket #4](troubleshooting/ticket-04-domain-name-resolution.md)
 
 ## Results
 
