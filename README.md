@@ -22,7 +22,7 @@ The repository contains the Active Directory lab configuration, setup screenshot
 
 ## Project Objectives
 
-The goal of this lab was to build a small Windows-based Active Directory environment and practice common IT administration tasks and Help Desk tasks.
+The goal of this lab was to build a small Windows-based Active Directory environment and practice common IT administration and Help Desk troubleshooting tasks.
 
 The lab objectives were to:
 
@@ -54,7 +54,6 @@ mapletech.local
 │   ├── IT
 │   ├── Marketing
 │   └── Sales
-│
 └── Security Groups
     ├── Executive_Group
     ├── Finance_Group
