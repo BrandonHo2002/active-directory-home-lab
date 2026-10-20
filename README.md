@@ -18,7 +18,7 @@ This project demonstrates the deployment and administration of a small Windows A
 The repository contains the Active Directory lab configuration, setup screenshots, and simulated Help Desk troubleshooting documentation.
 
 - `screenshots/` — Screenshots showing the initial lab configuration, Active Directory structure, domain authentication, and folder permission tests.
-- `Troubleshoot/` — Contains four simulated Help Desk ticket documents and a separate folder containing screenshots associated with the troubleshooting tickets.
+- `troubleshooting/` — Contains four simulated Help Desk ticket documents and a separate folder containing screenshots associated with the troubleshooting tickets.
 
 ## Project Objectives
 
