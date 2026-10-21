@@ -24,8 +24,7 @@ simulated DNS issue.
 - Default gateway: 192.168.3.2
 - DNS server: 192.168.3.10
 
-The initial configuration was working correctly. An incorrect DNS server was
-introduced afterward to simulate a Help Desk incident.
+The initial configuration was working correctly, with CLIENT01 using the domain controller (192.168.3.10) as its DNS server. An incorrect DNS server configuration was then introduced to simulate a Help Desk incident.
 
 ### 2. Tested connectivity to the domain controller
 
